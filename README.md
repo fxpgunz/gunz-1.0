@@ -6,7 +6,13 @@ This is the Open GunZ (GunZ The Duel game) source repo. It was forked from the R
 ## Windows:
 Requisites:
 
-* GCC x64 Windows: http://tdm-gcc.tdragon.net/download
+* GCC x64 Windows: Important Edit:  Previous link added on the git was hijacked after the domain expired. MinGW official website is now down (as of 24th March 2021). Hence, instead of their official website, download from  https://sourceforge.net/projects/mingw/files/Installer/mingw-get-setup.exe/download or https://osdn.net/projects/mingw/ are both valid. 
+Look for mingw-get-setup.exe for downloading. Download it and launch the installer. Accept the terms and move on.
+You'll now see that the installer is connecting to the Internet and downloading a lot of tiny and small files. Wait till it ends.
+Right when it ends (which won't take long), you'll be presented a window with title MinGW Installation Manager. You should be in the 'Basic Setup' tab by default when it launches. If not, click on Basic Setup.
+Out of the numerous check boxes presented to you on the right side, tick "mingw32-gcc-g++-bin". If you are prompted with a menu, click on Mark for Install.
+
+
 * CMake 3.7 or later: Download the latest release from https://cmake.org/download/ under "Binary distributions." In the installer, select "Add CMake to the system PATH for all users". [Picture here](https://i.imgur.com/rQHLXX8.png).
 
 * Install Visual Studio 2019 Community edition (https://visualstudio.microsoft.com/downloads/)
@@ -41,15 +47,7 @@ With:     `<VCMessage Code="MSB8051" Type="Warning" Condition="'$(XPDeprecationW
 Requisites:
 
 * Install the following packages: 
-    - sudo apt install cmake
-    - sudo apt install zlib1g-dev
-    - sudo apt install build-essential checkinstall zlib1g-dev -y
-    - sudo apt-get install -y libsodium-dev
-    - apt-get install libssl-dev
-    - sudo apt-get install libsqlite3-dev
-    - sudo apt-get install libasio-dev
-    - sudo apt-get install libcurl4-openssl-dev
-    - sudo apt-get install libsystemd-dev
+    - sudo apt install cmake zlib1g-dev build-essential checkinstall zlib1g-dev libsodium-dev libssl-dev libsqlite3-dev libasio-dev  libcurl4-openssl-dev libsystemd-dev
 
 To build, run `build-linux.sh` in source folder.
 
@@ -81,4 +79,4 @@ You can also reach us on our discord via [this](https://discord.gg/CWjzsu5) link
 
 [Michael Steshenko](https://github.com/Michael-Steshenko) (https://igunz.net)
 
-ThievingSix (https://igunz.net)
+
