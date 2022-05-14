@@ -1,12 +1,11 @@
-# Open GunZ Source
-This is the Open GunZ (GunZ The Duel game) source repo. It was forked from the Refined GunZ source (https://github.com/Asunaya/RefinedGunz) and updated by the International GunZ (http://igunz.net) private server developers.
-
+# Damn Vulnerable Gunz Server Based on Refined .
+This is the Open GunZ (GunZ The Duel game) source repo. It was forked from the Refined GunZ source (https://github.com/Asunaya/RefinedGunz) & updates from Igunz.
 # Building the source for the first time
 
 ## Windows:
 Requisites:
 
-* GCC x64 Windows: Important Edit:  Previous link added on the git was hijacked after the domain expired. MinGW official website is now down (as of 24th March 2021). Hence, instead of their official website, download from  https://sourceforge.net/projects/mingw/files/Installer/mingw-get-setup.exe/download or https://osdn.net/projects/mingw/ are both valid. 
+* GCC x64 Windows: Important Edit:  Previous link added on the git was hijacked after the domain expired. MinGW official website is now down (as of 24th March 2021). Hence, instead of their official website, download from https://github.com/jmeubank/tdm-gcc-src/releases/tag/v10.3.0-tdm64-1 for tdm version or  https://sourceforge.net/projects/mingw/files/Installer/mingw-get-setup.exe/download or https://osdn.net/projects/mingw/  
 Look for mingw-get-setup.exe for downloading. Download it and launch the installer. Accept the terms and move on.
 You'll now see that the installer is connecting to the Internet and downloading a lot of tiny and small files. Wait till it ends.
 Right when it ends (which won't take long), you'll be presented a window with title MinGW Installation Manager. You should be in the 'Basic Setup' tab by default when it launches. If not, click on Basic Setup.
@@ -15,7 +14,7 @@ Out of the numerous check boxes presented to you on the right side, tick "mingw3
 
 * CMake 3.7 or later: Download the latest release from https://cmake.org/download/ under "Binary distributions." In the installer, select "Add CMake to the system PATH for all users". [Picture here](https://i.imgur.com/rQHLXX8.png).
 
-* Install Visual Studio 2019 Community edition (https://visualstudio.microsoft.com/downloads/)
+* Install Visual Studio 2019/2022 Community edition (https://visualstudio.microsoft.com/downloads/)
 
   - In the installer, select the `Desktop development with C++`
 
@@ -24,10 +23,12 @@ Out of the numerous check boxes presented to you on the right side, tick "mingw3
   - Select Individual components on the top bar and search for C++ Windows XP Support for VS 2017 (v141) tools [Depreciated]
 
 
-* OPENSSL: Download and install in `C:\OpenSSL-Win32` from [here](https://mega.nz/#!jLQWAQBJ!nT3v1FDHO80ikOmzsBZrImUpyh5ozE9mYnxdGXDDKWA)
+* OPENSSL: Download and install in `C:\OpenSSL-Win32` from [here](https://slproweb.com/download/Win32OpenSSL_Light-3_0_3.exe)
   - For "copy OpenSSL DLLs to" prompt, choose "The Windows system directory".
-  - Next download vs2017 OpenSSL files from [here](https://mega.nz/#!HfwCkIJa!UYvC9Sv2S24PFwHYEzWfrHevISTf1AmD9LuEMI8Yhco)
+ 
+ ( I didn't need this to compile the src )  - Next download vs2017 OpenSSL files from [here](https://mega.nz/#!HfwCkIJa!UYvC9Sv2S24PFwHYEzWfrHevISTf1AmD9LuEMI8Yhco)
   - Delete everything in `C:\OpenSSL-Win32` and replace it with the vs2017 files.
+
 * Zlib Download: From [here](https://mega.nz/#!LepTgbTT!AHdYH0Kil1jxaINwhbm5uh7VtjKtcx6vMz6WZVHpCOU) and extract that on your system `C:\Program Files (x86)\zlib`.
 
 To build, run `build-win32-VS2019.bat` in source folder. Wait until it says "Build succeeded" with possibly some warnings in yellow.
