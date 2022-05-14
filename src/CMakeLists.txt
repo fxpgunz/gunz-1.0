@@ -1,5 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 
+# Set build type. Do this *before* we set the project name:
+if( NOT CMAKE_BUILD_TYPE )
+  set( CMAKE_BUILD_TYPE Release CACHE STRING
+    "Choose the type of build, options are: None Debug Release RelWithDebInfo Profile."
+    FORCE )
+endif( NOT CMAKE_BUILD_TYPE )
+set( CMAKE_CONFIGURATION_TYPES "${CMAKE_BUILD_TYPE}" CACHE INTERNAL "internal" )
+
+# Various compile/optimisation options that we may want to enable:
+include( SetCompileOptions )
+
 enable_testing()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
